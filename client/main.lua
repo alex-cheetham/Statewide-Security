@@ -233,7 +233,7 @@ local function openGarage()
             label = v.label,
             value = v.model,
             disabled = Sec.rank < v.minRank,
-            desc = Sec.rank < v.minRank and ('Requires %s'):format(Config.Ranks[v.minRank].name) or nil,
+            desc = Sec.rank < v.minRank and ('Requires %s'):format(Config.Ranks[v.minRank].name) or v.description,
         }
     end
     Sec.OpenMenu('garage', 'Motor Pool', 'Sign out a patrol vehicle', items, function(model)
@@ -252,6 +252,15 @@ local function openGarage()
         end
         if DoesEntityExist(veh) then
             Sec.vehicle = veh
+            local entry
+            for _, v in ipairs(Config.Vehicles) do
+                if v.model == model then entry = v end
+            end
+            if entry and entry.extrasOff then
+                for i = 0, 20 do
+                    if DoesExtraExist(veh, i) then SetVehicleExtra(veh, i, true) end
+                end
+            end
             SetVehicleLivery(veh, Config.VehicleLivery)
             SetVehicleDirtLevel(veh, 0.0)
             SetVehicleEngineOn(veh, true, true, false)

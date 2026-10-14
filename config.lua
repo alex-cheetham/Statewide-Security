@@ -67,11 +67,16 @@ Config.HQ = {
     blip = { sprite = 487, color = 38, scale = 0.85 },
 }
 
+-- extrasOff = true turns off every vehicle extra (lightbars, pushbars, etc.) on spawn
 Config.Vehicles = {
-    { model = 'dilettante2', label = 'Patrol Dilettante', minRank = 1 },
-    { model = 'granger',     label = 'Patrol Granger',    minRank = 2 },
-    { model = 'baller2',     label = 'Supervisor Baller', minRank = 4 },
-    { model = 'stockade',    label = 'Armoured Stockade', minRank = 3 },
+    { model = 'sec11vicyw',     label = '2011 Ford Crown Victoria',     minRank = 1, extrasOff = true, description = 'Classic patrol car for mobile security.' },
+    { model = 'sec18chargeryw', label = '2018 Dodge Charger',           minRank = 1, extrasOff = true, description = 'Patrol car for mobile security.' },
+    { model = 'sec16fpiuyw',    label = '2016 Ford Interceptor Utility', minRank = 2, extrasOff = true, description = 'Patrol SUV for site and mobile security.' },
+    { model = 'sec21fpiuyw',    label = '2021 Ford Interceptor Utility', minRank = 2, extrasOff = true, description = 'Patrol SUV for site and mobile security.' },
+    { model = 'sec21durangoyw', label = '2021 Dodge Durango',           minRank = 2, extrasOff = true, description = 'Patrol SUV.' },
+    { model = 'sec19tahoeyw',   label = '2019 Chevrolet Tahoe',         minRank = 3, extrasOff = true, description = 'Full-size patrol SUV.' },
+    { model = 'sec22transit',   label = '2022 Ford Transit',            minRank = 3, extrasOff = true, description = 'Security van for cash runs and crew transport.' },
+    { model = 'sec22tahoeyw',   label = '2022 Chevrolet Tahoe',         minRank = 4, extrasOff = true, description = 'Full-size patrol SUV.' },
 }
 Config.VehicleLivery = 0
 Config.VehiclePlatePrefix = 'SWS'
