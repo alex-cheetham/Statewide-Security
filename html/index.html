@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statewide Security</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- passive HUD layer -->
+    <div id="toasts"></div>
+    <div id="radio-feed"></div>
+    <div id="objective" class="hidden"></div>
+    <div id="incident-alert" class="hidden"></div>
+    <div id="rewards"></div>
+    <div id="radio-check" class="hidden"></div>
+    <div id="panic-flash" class="hidden"></div>
+
+    <div id="hud" class="hidden">
+        <div class="hud-top">
+            <span class="hud-badge">SWS</span>
+            <div>
+                <div id="hud-callsign" class="hud-callsign"></div>
+                <div id="hud-rank" class="hud-rank"></div>
+            </div>
+        </div>
+        <div id="hud-patrol" class="hud-patrol hidden">
+            <div id="hud-site" class="hud-site"></div>
+            <div class="hud-progress"><div id="hud-progress-fill"></div></div>
+            <div id="hud-next" class="hud-next"></div>
+        </div>
+    </div>
+
+    <div id="progress" class="hidden">
+        <div id="progress-label"></div>
+        <div class="progress-track"><div id="progress-fill"></div></div>
+    </div>
+
+    <div id="result-card" class="hidden"></div>
+
+    <!-- focused UIs -->
+    <div id="menu" class="hidden">
+        <div class="menu-head">
+            <div id="menu-title"></div>
+            <div id="menu-subtitle"></div>
+        </div>
+        <div id="menu-items"></div>
+        <div class="menu-foot">ESC to close</div>
+    </div>
+
+    <div id="dialog" class="hidden">
+        <div class="dialog-card">
+            <div class="dialog-head">
+                <div>
+                    <div id="dlg-type" class="dlg-type"></div>
+                    <div id="dlg-subject" class="dlg-subject"></div>
+                    <div id="dlg-meta" class="dlg-meta"></div>
+                </div>
+                <button class="icon-btn" data-close="dialog">&times;</button>
+            </div>
+            <div class="dialog-reads">
+                <div class="read"><span>Demeanor</span><strong id="dlg-demeanor"></strong></div>
+                <div class="read"><span>Cooperation</span><strong id="dlg-coop"></strong></div>
+                <div class="read"><span>Records</span><strong id="dlg-records"></strong></div>
+            </div>
+            <div id="dlg-flags" class="dlg-flags"></div>
+            <div id="dlg-transcript" class="dlg-transcript"></div>
+            <div id="dlg-actions" class="dlg-actions"></div>
+            <div class="dialog-foot">Read the subject. Calm approaches build rapport, commands raise stress.</div>
+        </div>
+    </div>
+
+    <div id="summary" class="hidden">
+        <div class="summary-card">
+            <h2>Shift Complete</h2>
+            <div id="summary-body" class="summary-grid"></div>
+            <button class="btn primary" data-close="summary">Done</button>
+        </div>
+    </div>
+
+    <div id="tablet" class="hidden">
+        <div class="tablet-frame">
+            <aside class="tablet-nav">
+                <div class="brand">
+                    <div class="brand-mark">SWS</div>
+                    <div id="brand-name" class="brand-name">Statewide Security</div>
+                </div>
+                <nav id="tabs">
+                    <button data-tab="overview" class="active">Overview</button>
+                    <button data-tab="sites">Sites</button>
+                    <button data-tab="team">Team</button>
+                    <button data-tab="reports">Reports <span id="pending-count" class="pill hidden"></span></button>
+                    <button data-tab="review" id="review-tab" class="hidden">Supervisor</button>
+                </nav>
+                <div class="nav-foot">
+                    <div id="nav-status" class="status-dot"></div>
+                    <button class="btn ghost" data-close="tablet">Close (ESC)</button>
+                </div>
+            </aside>
+            <main class="tablet-main">
+                <section data-panel="overview" class="panel active"></section>
+                <section data-panel="sites" class="panel"></section>
+                <section data-panel="team" class="panel"></section>
+                <section data-panel="reports" class="panel"></section>
+                <section data-panel="review" class="panel"></section>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
